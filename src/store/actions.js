@@ -1,11 +1,13 @@
-const cityLists = { 
-	cities: [
-		{
-			id: 1, 
-			name: 'Seoul'
-		}
-	] 
-}
+const cityLists = [
+	{
+		id: 1, 
+		name: 'Seoul'
+	},
+	{
+		id: 2, 
+		name: 'Pusan'
+	},
+] 
 
 export default {
 	ACT_CITY({ commit }) {
