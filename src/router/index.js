@@ -21,6 +21,13 @@ const routes = [
 		path: '/weekly',
 		name: 'Weekly',
 		component: Weekly
+	},
+	{
+		path: '/test/:id',
+		name: 'Test',
+		component: Weekly,
+		// this.$route.params.id
+		// this.$route.query.id
 	}
 ]
 
