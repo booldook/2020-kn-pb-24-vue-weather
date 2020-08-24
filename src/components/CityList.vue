@@ -20,7 +20,7 @@ export default {
 		this.$store.dispatch('ACT_CITY');
 	},
 	computed: {
-		...mapGetters(['GET_CITY']),
+		...mapGetters(['GET_CITY', 'GET_DAILY', 'GET_WEEKLY']),
 		/*
 		3. getter를 mapGetters로 불러오는 법 -> 위의 완성된 문장으로 축약할 수 있다.
 		...mapGetters({
@@ -42,7 +42,7 @@ export default {
 	},
 	methods: {
 		onCityChanged(e) {
-			// this.$store.dispatch('ACT_WEATHER', this.city);
+			this.$store.dispatch('ACT_WEATHER', this.city);
 		}
 	}
 }
