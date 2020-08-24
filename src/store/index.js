@@ -9,7 +9,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		cityLists: [],
-		daily:{},
+		daily: {},
+		weekly: {},
 	}, // 전역변수 선언
 	getters, // 컴포넌트들의 변수 요청을 응답하는 객체
 	mutations, // 변수의 변화를 감지하는 객체

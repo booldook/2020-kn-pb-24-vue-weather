@@ -13,4 +13,14 @@ const axCity = async () => {
 	}
 }
 
-export { axCity }
+const axWeather = async (cityId) => {
+	try {
+
+	}
+	catch(e) {
+		console.log(e);
+		return e;
+	}
+}
+
+export { axCity, axWeather }
