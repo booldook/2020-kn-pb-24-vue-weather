@@ -22,6 +22,7 @@ const axWeather = async (cityId) => {
 	try {
 		const daily = await axios.get(DAILY_URL, { params });
 		const weekly = await axios.get(WEEKLY_URL, { params });
+		daily.data.icon = `${ICON_URL}${daily.data.weather[0].icon}@2x.png`
 		return { daily: daily.data, weekly: weekly.data };
 	}
 	catch(e) {

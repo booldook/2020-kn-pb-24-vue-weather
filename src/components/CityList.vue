@@ -38,7 +38,9 @@ export default {
 		*/
 	},
 	watch: {
-	
+		GET_DAILY(val, old) {
+			this.$router.push('/daily')
+		}
 	},
 	methods: {
 		onCityChanged(e) {
