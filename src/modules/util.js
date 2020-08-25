@@ -14,4 +14,14 @@ const iconUrl = (icon, ICON_URL) => {
 	return `${ICON_URL}${icon}@2x.png`
 }
 
-export { windDir, iconUrl }
+const location = () => {
+	return new Promise((resolve, reject) => {
+		navigator.geolocation.getCurrentPosition((r) => {
+			resolve({ err: null, lat: r.coords.latitude, lon: r.coords.longitude });
+		}, (e) => {
+			reject({ err: e, lat: null, lon: null });
+		})
+	});
+}
+
+export { windDir, iconUrl, location }

@@ -5,6 +5,8 @@
 				p.pl-3.text-secondary
 					small vue.js로 개발한 이용한 날씨정보 앱
 		city-list
+		.p-3.text-center
+			button.btn.btn-primary(@click='onCoords') 현재위치의 날씨정보 보기
 </template>
 
 <script>
@@ -14,6 +16,11 @@ export default {
 	name: 'Home',
 	components: {
 		'city-list': CityList,
+	},
+	methods: {
+		onCoords(e) {
+			this.$store.dispatch('ACT_WEATHER', null)
+		}
 	}
 }
 </script>

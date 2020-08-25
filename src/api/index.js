@@ -1,6 +1,6 @@
 import axios from 'axios'
 import moment from 'moment'
-import { windDir, iconUrl } from '../modules/util'
+import { windDir, iconUrl, location } from '../modules/util'
 
 const API_KEY = '02efdd64bdc14b279bc91d9247db4722'
 const CITY_URL = '/json/city.json'
@@ -20,8 +20,14 @@ const axCity = async () => {
 }
 
 const axWeather = async (cityId) => {
-	const params = { units: 'metric', appid: API_KEY, id: cityId };
+	const params = { units: 'metric', appid: API_KEY };
 	try {
+		if(cityId) params.id = cityId
+		else {
+			let { lat, lon } = await location();
+			params.lat = lat; 
+			params.lon = lon; 
+		} 
 		const daily = await axios.get(DAILY_URL, { params });
 		const weekly = await axios.get(WEEKLY_URL, { params });
 		// Daily

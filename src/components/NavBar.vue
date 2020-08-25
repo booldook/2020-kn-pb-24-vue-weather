@@ -5,15 +5,20 @@
 				i.fa.fa-sun.text-light
 			router-link(to='/')
 				.p-2.mr-2 Home
-			router-link(to='/daily')
+			router-link(to='/daily' v-show='chk')
 				.p-2.mr-2 Daily Weather
-			router-link(to='/weekly')
+			router-link(to='/weekly' v-show='chk')
 				.p-2.mr-2 Weekly Weather
 </template>
 
 <script>
 export default {
-	name: 'NavBar'
+	name: 'NavBar',
+	computed: {
+		chk() {
+			return this.$store.state.daily
+		}
+	}
 }
 </script>
 
