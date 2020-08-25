@@ -1,4 +1,5 @@
 import axios from 'axios'
+import moment from 'moment'
 import { windDir, iconUrl } from '../modules/util'
 
 const API_KEY = '02efdd64bdc14b279bc91d9247db4722'
@@ -28,7 +29,12 @@ const axWeather = async (cityId) => {
 		daily.data.windDir = windDir(daily.data.wind.deg);
 
 		// Weekly
-		
+		for(let v of weekly.data.list) {
+			v.icon = iconUrl(v.weather[0].icon, ICON_URL);
+			v.date = moment(Number(v.dt) * 1000).format('YYYY년 MM월 DD일 HH시');
+			v.windDir = windDir(v.wind.deg);
+		}
+
 		return { daily: daily.data, weekly: weekly.data };
 	}
 	catch(e) {
