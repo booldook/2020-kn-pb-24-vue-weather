@@ -23,5 +23,5 @@ div, ul, li, p, h1, h2, h3, h4, h5, form {margin: 0; padding: 0;}
 ul {list-style: none;}
 #app {height: 100vh; border-left: 1px solid #f1f1f1; border-right: 1px solid #f1f1f1;}
 .container {padding: 0 !important;}
-.wrapper {height: 100vh;}
+.wrapper {height: 100vh; overflow-y: auto;}
 </style>
